@@ -1,0 +1,56 @@
+{
+  "name": "react-sass-jasmine-karma-webpack-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate to initialize",
+  "homepage": "https://github.com/davidan90/react-sass-jasmine-karma-webpack-boilerplate#readme",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidan90/react-sass-jasmine-karma-webpack-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "sass",
+    "jasmine",
+    "karma",
+    "webpack"
+  ],
+  "author": "David Álvarez Navarro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidan90/react-sass-jasmine-karma-webpack-boilerplate/issues"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "jasmine": "^2.8.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-mocha-reporter": "^2.2.4",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.4",
+    "path": "^0.12.7",
+    "node-sass": "^4.5.3",
+    "prop-types": "^15.5.10",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-merge": "^4.1.0"
+  }
+}
