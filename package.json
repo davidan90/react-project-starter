@@ -20,20 +20,20 @@
     "webpack"
   ],
   "author": "David Álvarez Navarro",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/davidan90/react-sass-jasmine-karma-webpack-boilerplate/issues"
   },
   "dependencies": {
-    "babel-preset-stage-0": "^6.24.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.7",
