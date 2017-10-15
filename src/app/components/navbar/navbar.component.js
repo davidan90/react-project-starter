@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Styles
+import './_navbar.component.scss';
+
 const createLink = ( links ) => 
     links.map( (link, index) => {
             const id = `link_${index}`;

@@ -1,3 +1,12 @@
 .navbar {
-    /* TODO */
+    background-color: gainsboro;
+    height: 3em;
+    padding: 1em 0;
+    width: 100%;
+    ul {
+        li {
+            display: inline;
+            margin-right: 1em; 
+        }
+    }
 }

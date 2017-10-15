@@ -4,6 +4,9 @@ import { Route } from 'react-router-dom';
 // Constants
 import { CONTAINERS_ELEMENTS } from './constants';
 
+// Styles
+import './_section.component.scss';
+
 const createSection = ( sections ) => 
     sections.map( (section, index) => {
             const id = `section_${index}`;
