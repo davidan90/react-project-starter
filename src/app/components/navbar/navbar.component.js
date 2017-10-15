@@ -1,13 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+const createLink = ( links ) => 
+    links.map( (link, index) => {
+            const id = `link_${index}`;
+            const path = `/${ link.toLowerCase() }`;
+            return (
+                <li key={ id }>
+                    <Link to={ path }> { link } </Link>
+                </li>
+            );
+        }
+    );
+
 
 export class NavbarComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            links: this.props.links,
+        };
+    }
+
     render() {
+        const links = Object.freeze(this.state.links);
+
         return (
             <nav className="navbar">
                 <ul>
-                    <li>
-                        <span>Home</span>
-                    </li>
+                    { createLink(Object.values(links)) }
                 </ul>
             </nav>
         );
