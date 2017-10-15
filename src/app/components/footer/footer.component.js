@@ -1,5 +1,5 @@
-import React from 'react';
+import { Component } from 'react';
 
-export class FooterComponent extends React.Component {
+export class FooterComponent extends Component {
     /* TODO */
 }

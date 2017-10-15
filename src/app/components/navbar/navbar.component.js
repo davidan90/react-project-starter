@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -18,7 +18,7 @@ const createLink = ( links ) =>
     );
 
 
-export class NavbarComponent extends React.Component {
+export class NavbarComponent extends Component {
 
     static propTypes = {
         links: PropTypes.object,

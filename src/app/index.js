@@ -1,6 +1,6 @@
-import React from 'react';
+import { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // Constants
 import { CONTAINERS } from './constants';
@@ -14,16 +14,20 @@ import { NavbarComponent, SectionComponent } from './components';
 // Styles
 import './index.scss';
 
-const app = (
-    <div id="my-app">
-        <Router>
-            <div>
-                <NavbarComponent links={ CONTAINERS } />
-                <SectionComponent sections={ CONTAINERS } />
+class App extends Component {
+    render() {
+        return (
+            <div id="my-app">
+                <Router>
+                    <div>
+                        <NavbarComponent links={ CONTAINERS } />
+                        <SectionComponent sections={ CONTAINERS } />
+                    </div>
+                </Router>
             </div>
-        </Router>
-    </div>
-);
+        );
+    }
+}
 
-ReactDOM.render(app, document.getElementById('app-root'));
+ReactDOM.render(<App />, document.getElementById('app-root'));
 routerService();

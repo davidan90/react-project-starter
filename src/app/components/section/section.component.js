@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -18,7 +18,7 @@ const createSection = ( sections ) =>
         }
     );
 
-export class SectionComponent extends React.Component {
+export class SectionComponent extends Component {
     
     static propTypes = {
         sections: PropTypes.object,
