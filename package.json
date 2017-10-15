@@ -25,6 +25,7 @@
     "url": "https://github.com/davidan90/react-sass-jasmine-karma-webpack-boilerplate/issues"
   },
   "dependencies": {
+    "babel-preset-stage-0": "^6.24.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2"
