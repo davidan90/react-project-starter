@@ -1,6 +1,7 @@
 /*
     Configuracion de base
 */
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -8,6 +9,10 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/app/index.html',
   filename: 'index.html',
   inject: 'body'
+});
+
+const ReactPluginConfig = new webpack.ProvidePlugin({
+  React: 'react',
 });
 
 const BASE_CONFIG = {
@@ -21,7 +26,7 @@ const BASE_CONFIG = {
     ]
   },
 
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig, ReactPluginConfig]
 }
 
 module.exports = BASE_CONFIG;
