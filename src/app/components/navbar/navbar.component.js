@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // Styles
 import './_navbar.component.scss';
@@ -18,6 +19,11 @@ const createLink = ( links ) =>
 
 
 export class NavbarComponent extends React.Component {
+
+    static propTypes = {
+        links: PropTypes.object,
+    };
+    
     constructor(props) {
         super(props);
         this.state = {

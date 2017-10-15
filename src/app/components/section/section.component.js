@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // Constants
 import { CONTAINERS_ELEMENTS } from './constants';
@@ -18,6 +19,11 @@ const createSection = ( sections ) =>
     );
 
 export class SectionComponent extends React.Component {
+    
+    static propTypes = {
+        sections: PropTypes.object,
+    };
+
     constructor(props) {
         super(props);
         this.state = {
