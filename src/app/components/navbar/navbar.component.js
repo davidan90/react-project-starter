@@ -2,8 +2,16 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+// Services
+import { translate } from '../../services/i18n';
+
 // Styles
 import './_navbar.component.scss';
+
+const i18nRef = {
+    Home: 'container.home',
+    About: 'container.about',
+};
 
 const createLink = ( links ) => 
     links.map( (link, index) => {
@@ -11,12 +19,11 @@ const createLink = ( links ) =>
             const path = `/${ link.toLowerCase() }`;
             return (
                 <li key={ id }>
-                    <Link to={ path }> { link } </Link>
+                    <Link to={ path }> { translate( `${i18nRef[link]}.title`) } </Link>
                 </li>
             );
         }
     );
-
 
 export class NavbarComponent extends Component {
 

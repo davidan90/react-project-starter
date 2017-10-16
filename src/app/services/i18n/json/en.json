@@ -1,0 +1,11 @@
+{
+    "container": { 
+        "home": {
+            "title": "Home"
+        },
+        "about": {
+            "title": "About"
+        }
+    }
+
+}
