@@ -11,7 +11,8 @@ import routerService from './services';
 // Components
 import { NavbarComponent, SectionComponent } from './components';
 
-// Styles
+// Styles css and scss
+import './assets/css/grid/bootstrap-grid.min.css';
 import './index.scss';
 
 class App extends Component {
