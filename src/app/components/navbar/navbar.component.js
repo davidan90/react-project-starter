@@ -18,7 +18,7 @@ const createLink = ( links ) =>
             const id = `link_${index}`;
             const path = `/${ link.toLowerCase() }`;
             return (
-                <li key={ id }>
+                <li key={ id } className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">
                     <Link to={ path }> { translate( `${i18nRef[link]}.title`) } </Link>
                 </li>
             );
@@ -40,10 +40,12 @@ export class NavbarComponent extends Component {
         const { links } = Object.freeze(this.props);
 
         return (
-            <nav className="navbar">
-                <ul>
-                    { createLink(Object.values(links)) }
-                </ul>
+            <nav className="container navbar">
+                <div className="row">
+                    <ul>
+                        { createLink(Object.values(links)) }
+                    </ul>
+                </div>
             </nav>
         );
     }

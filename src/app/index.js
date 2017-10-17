@@ -12,7 +12,6 @@ import routerService from './services';
 import { NavbarComponent, SectionComponent } from './components';
 
 // Styles css and scss
-import './assets/css/grid/bootstrap-grid.min.css';
 import './index.scss';
 
 class App extends Component {
@@ -20,7 +19,7 @@ class App extends Component {
         return (
             <div id="my-app">
                 <Router>
-                    <div>
+                    <div class="container">
                         <NavbarComponent links={ CONTAINERS } />
                         <SectionComponent sections={ CONTAINERS } />
                     </div>

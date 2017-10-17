@@ -35,7 +35,7 @@ export class SectionComponent extends Component {
         const defaultComponent = CONTAINERS_ELEMENTS[sections.home];
 
         return (
-            <section className="section">
+            <section className="container section">
                 <div>
                     <Route exact path={ defaultPath } component={ defaultComponent } />
                     { createSection(Object.values(sections)) }
