@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { object } from 'prop-types';
 
 // Services
 import { translate } from '../../services/i18n';
@@ -26,20 +26,18 @@ const createLink = ( links ) =>
     );
 
 export class NavbarComponent extends Component {
+    state = {};
 
     static propTypes = {
-        links: PropTypes.object,
+        links: object,
     };
-    
-    constructor(props) {
-        super(props);
-        this.state = {
-            links: this.props.links,
-        };
+
+    static defaultProps = {
+        links: {},
     }
 
     render() {
-        const links = Object.freeze(this.state.links);
+        const { links } = Object.freeze(this.props);
 
         return (
             <nav className="navbar">

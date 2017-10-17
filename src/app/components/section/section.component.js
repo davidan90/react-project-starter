@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { object } from 'prop-types';
 
 // Constants
 import { CONTAINERS_ELEMENTS } from './constants';
@@ -19,20 +19,18 @@ const createSection = ( sections ) =>
     );
 
 export class SectionComponent extends Component {
+    state = {};
     
     static propTypes = {
-        sections: PropTypes.object,
+        sections: object,
     };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            sections: props.sections,
-        };
-    }
+    static defaultProps = {
+        sections: {},
+    };
 
     render() {
-        const sections = Object.freeze(this.state.sections);
+        const { sections } = Object.freeze(this.props);
         const defaultPath = '/';
         const defaultComponent = CONTAINERS_ELEMENTS[sections.home];
 
