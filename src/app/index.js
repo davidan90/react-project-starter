@@ -20,8 +20,8 @@ class App extends Component {
             <div id="my-app">
                 <Router>
                     <div className="container">
-                        <NavbarComponent links={ CONTAINERS } />
-                        <SectionComponent sections={ CONTAINERS } />
+                        <NavbarComponent links={CONTAINERS} />
+                        <SectionComponent sections={CONTAINERS} />
                     </div>
                 </Router>
             </div>

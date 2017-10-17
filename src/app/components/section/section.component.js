@@ -13,7 +13,7 @@ const createSection = ( sections ) =>
             const id = `section_${index}`;
             const path = `/${ section.toLowerCase() }`;
             return (
-                <Route key={ id } path={ path } component={ CONTAINERS_ELEMENTS[section] } />
+                <Route key={id} path={path} component={CONTAINERS_ELEMENTS[section]} />
             );
         }
     );
@@ -37,8 +37,8 @@ export class SectionComponent extends Component {
         return (
             <section className="container section">
                 <div>
-                    <Route exact path={ defaultPath } component={ defaultComponent } />
-                    { createSection(Object.values(sections)) }
+                    <Route exact path={defaultPath} component={defaultComponent} />
+                    {createSection(Object.values(sections))}
                 </div>
             </section>
         );

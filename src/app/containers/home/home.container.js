@@ -8,7 +8,7 @@ export class Home extends Component {
     render() {
         return (
             <div>
-                <h1>{ translate('container.home.title') }</h1>
+                <h1>{translate('container.home.title')}</h1>
             </div>
         );
     }
