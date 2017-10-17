@@ -19,7 +19,7 @@ class App extends Component {
         return (
             <div id="my-app">
                 <Router>
-                    <div class="container">
+                    <div className="container">
                         <NavbarComponent links={ CONTAINERS } />
                         <SectionComponent sections={ CONTAINERS } />
                     </div>
