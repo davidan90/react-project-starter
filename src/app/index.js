@@ -17,7 +17,10 @@ import { NavbarComponent, SectionComponent } from './components';
 // Styles css and scss
 import './index.scss';
 
-const store = createStore(reduxService.reducers);
+const store = createStore(
+    reduxService.reducers.all,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 class App extends Component {
     render() {

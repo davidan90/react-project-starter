@@ -1,1 +1,1 @@
-/* TODO */
+export * from './example.constants';
