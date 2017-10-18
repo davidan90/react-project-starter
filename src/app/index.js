@@ -1,18 +1,23 @@
 import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
 // Constants
 import { CONTAINERS } from './constants';
 
 // Services
-import routerService from './services';
+import { routerService } from './services/router';
+import { reduxService } from './services/redux';
 
 // Components
 import { NavbarComponent, SectionComponent } from './components';
 
 // Styles css and scss
 import './index.scss';
+
+const store = createStore(reduxService.reducers);
 
 class App extends Component {
     render() {
@@ -29,5 +34,11 @@ class App extends Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app-root'));
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>, 
+    document.getElementById('app-root')
+);
+
 routerService();
