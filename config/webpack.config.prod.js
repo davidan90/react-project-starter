@@ -1,13 +1,13 @@
 /*
-    Configuracion dev
+    Configuracion prod
 */
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const BASE_CONFIG = require('../webpack.config');
 
-const enviroment = 'dev';
+const enviroment = 'production';
 
-const DEV_CONFIG = {
+const PROD_CONFIG = {
     target: enviroment,
 
     plugins: [
@@ -23,5 +23,5 @@ const DEV_CONFIG = {
     },
 }
 
-const webpackConfig = merge.smart(BASE_CONFIG, DEV_CONFIG);
+const webpackConfig = merge.smart(BASE_CONFIG, PROD_CONFIG);
 module.exports = webpackConfig;
