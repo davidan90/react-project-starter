@@ -6,8 +6,8 @@ const INITIAL_STATE = {
 export const example = (state = INITIAL_STATE, {type, playload}) => {
     switch (type) {
         case CLICK_EXAMPLE:
-          return Object.assign(state, playload);
+          return Object.assign({}, state, playload);
         default:
-          return state
+          return state;
       }
 };
