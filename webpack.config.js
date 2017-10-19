@@ -6,8 +6,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './src/app/main.html',
-  filename: 'main.html',
+  template: './src/app/index.html',
+  filename: 'index.html',
   inject: 'body'
 });
 
@@ -16,7 +16,7 @@ const ReactPluginConfig = new webpack.ProvidePlugin({
 });
 
 const BASE_CONFIG = {
-  entry: './src/app',
+  entry: ['./src/app/main.js'],
 
   module: {
     loaders: [
