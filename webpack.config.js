@@ -6,8 +6,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './src/app/index.html',
-  filename: 'index.html',
+  template: './src/app/main.html',
+  filename: 'main.html',
   inject: 'body'
 });
 

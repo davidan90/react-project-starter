@@ -15,7 +15,7 @@ import { reduxService } from './services/redux';
 import { NavbarComponent, SectionComponent } from './components';
 
 // Styles css and scss
-import './index.scss';
+import './main.scss';
 
 const store = createStore(
     reduxService.reducers.all,

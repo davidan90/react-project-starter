@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Boilerplate to initialize",
   "homepage": "https://github.com/davidan90/react-sass-jasmine-karma-webpack-boilerplate#readme",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "scripts": {
     "start": "webpack-dev-server",
     "test": "test"
