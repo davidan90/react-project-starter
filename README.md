@@ -19,3 +19,8 @@ npm i
 ```javascript
 npm start
 ```
+This assumes you are using [npm](https://www.npmjs.com/) as your package manager.
+
+## **License**
+
+MIT
