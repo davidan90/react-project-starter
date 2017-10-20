@@ -3,7 +3,7 @@
 
 ## **Description**
 
-This project is a boilerplate to start asap writing your frontend project, it is an initializer.
+This project is a boilerplate to start writing your frontend project, it is an initializer.
 
 ---
 ## **Init**
@@ -28,9 +28,9 @@ This assumes you are using [npm](https://www.npmjs.com/) as your package manager
 | --- | --- |
 | [React](https://reactjs.org/) | Library to build the app interface.
 | [Sass](http://sass-lang.com/) | CSS preprocessor.
-| [Jasmine](https://jasmine.github.io/) | TDD framwork for testing the app.
+| [Jasmine](https://jasmine.github.io/) | TDD framework for testing the app.
 | [Karma](https://karma-runner.github.io/1.0/index.html) | Test runner.
-| [Webpack](https://webpack.github.io/) | The module bundler.
+| [Webpack](https://webpack.github.io/) | Module bundler.
 
 ---
 ## **License**
