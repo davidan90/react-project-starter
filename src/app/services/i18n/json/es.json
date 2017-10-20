@@ -1,4 +1,18 @@
 {
+    "components": {
+        "aside": {
+
+        },
+        "navbar": {
+
+        },
+        "section": {
+
+        },
+        "footer": {
+            "text": "Texto de prueba"
+        }
+    },
     "container": { 
         "home": {
             "title": "Inicio"

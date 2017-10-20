@@ -1,4 +1,18 @@
 {
+    "components": {
+        "aside": {
+
+        },
+        "navbar": {
+
+        },
+        "section": {
+
+        },
+        "footer": {
+            "text": "Foo footer"
+        }
+    },
     "container": { 
         "home": {
             "title": "Home"

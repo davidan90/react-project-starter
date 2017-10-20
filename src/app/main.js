@@ -12,7 +12,7 @@ import { routerService } from './services/router';
 import { reduxService } from './services/redux';
 
 // Components
-import { NavbarComponent, SectionComponent } from './components';
+import { NavbarComponent, SectionComponent, FooterComponent } from './components';
 
 // Styles css and scss
 import './main.scss';
@@ -30,6 +30,7 @@ class App extends Component {
                     <div className="container">
                         <NavbarComponent links={CONTAINERS} />
                         <SectionComponent sections={CONTAINERS} />
+                        <FooterComponent />
                     </div>
                 </Router>
             </div>
