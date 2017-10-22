@@ -15,7 +15,8 @@
     },
     "container": { 
         "home": {
-            "title": "Inicio"
+            "title": "Inicio",
+            "btn-text": "Ejemplo Redux"
         },
         "about": {
             "title": "Nosotros"

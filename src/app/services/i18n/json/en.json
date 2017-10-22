@@ -15,7 +15,8 @@
     },
     "container": { 
         "home": {
-            "title": "Home"
+            "title": "Home",
+            "btn-text": "Ejemplo Redux"
         },
         "about": {
             "title": "About"
