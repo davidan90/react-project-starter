@@ -8,7 +8,9 @@ export class About extends Component {
     render() {
         return (
             <div>
-                <h1>{translate('container.about.title')}</h1>
+                <h1>
+                    {translate('container.about.title')}
+                </h1>
             </div>
         );
     }

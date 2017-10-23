@@ -10,7 +10,9 @@ export class FooterComponent extends Component {
     render() {
         return (
             <div className="container footer">
-                <p>{translate('components.footer.text')}</p>
+                <p>
+                    {translate('components.footer.text')}
+                </p>
             </div>
         );
     }
