@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { MediaQuery } from 'react-responsive';
 import { object } from 'prop-types';
 
 // Services
@@ -13,16 +14,32 @@ const i18nRef = {
     About: 'container.about',
 };
 
-const createLink = ( links ) => 
-    links.map( (link, index) => {
-            const id = `link_${index}`;
-            const path = `/${ link.toLowerCase() }`;
-            return (
-                <li key={ id } className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">
-                    <Link to={path}>{translate( `${i18nRef[link]}.title`)}</Link>
-                </li>
-            );
-        }
+const navbarDesktop = (links) => (
+    <MediaQuery minDeviceWidth={1224}>
+        <ul>
+            {createLink(Object.values(links))}
+        </ul>
+    </MediaQuery>
+);
+
+const mobileDesktop = () => (
+    <MediaQuery maxDeviceWidth={1223}>
+        <div>
+            <span>...</span>
+        </div>
+    </MediaQuery>
+);
+
+const createLink = (links) =>
+    links.map((link, index) => {
+        const id = `link_${index}`;
+        const path = `/${link.toLowerCase()}`;
+        return (
+            <li key={id} className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">
+                <Link to={path}>{translate(`${i18nRef[link]}.title`)}</Link>
+            </li>
+        );
+    }
     );
 
 export class NavbarComponent extends Component {
@@ -37,14 +54,13 @@ export class NavbarComponent extends Component {
     }
 
     render() {
-        const {links} = Object.freeze(this.props);
+        const { links } = Object.freeze(this.props);
 
         return (
             <nav className="container navbar">
                 <div className="row">
-                    <ul>
-                        {createLink(Object.values(links))}
-                    </ul>
+                    {navbarDesktop(links)}
+                    {mobileDesktop()}
                 </div>
             </nav>
         );
