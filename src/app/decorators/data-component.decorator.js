@@ -11,6 +11,11 @@ const defaultParams = {
 const DataComponent = ({url, params = defaultParams}) => 
     (ComposeComponent) => 
         class extends Component {
+            static state = {
+                isLoading: false,
+                data: undefined,
+                error: null,
+            }
 
             static propTypes = {
                 url: string.isRequired,
@@ -24,12 +29,6 @@ const DataComponent = ({url, params = defaultParams}) =>
 
             constructor(props) {
                 super(props);
-
-                this.state = {
-                    data: undefined,
-                    isLoading: false,
-                    error: null,
-                };
             }
             
             componentWillMount() {
