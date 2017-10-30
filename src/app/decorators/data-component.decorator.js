@@ -33,11 +33,14 @@ const DataComponent = ({url, params = defaultParams}) =>
             
             componentWillMount() {
                 this.setState({ isLoading: true });
-
-                fetch(url, params)
-                    .then(response => response.json())
-                    .then(data => this.setState({data, isLoading: false}))
+                this._getData(url, params)
+                    .then(data => this.setState({data, isLoading: false,}))
                     .catch( error => this.setState({error, isLoading: false,}));
+            }
+
+            async _getData(url, params) {
+                const data = await fetch(url, params);
+                return data.json();
             }
 
             render() {
