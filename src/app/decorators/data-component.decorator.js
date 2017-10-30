@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { string, object } from 'prop-types';
 
 const [ GET, POST, PATCH, PUT, DELETE ] = [ 'GET', 'POST', 'PATCH', 'PUT', 'DELETE']; 
 
@@ -10,6 +11,16 @@ const defaultParams = {
 const DataComponent = ({url, params = defaultParams}) => 
     (ComposeComponent) => 
         class extends Component {
+
+            static propTypes = {
+                url: string.isRequired,
+                params: object
+            }
+
+            static defaultProps = {
+                url,
+                params
+            }
 
             constructor(props) {
                 super(props);
