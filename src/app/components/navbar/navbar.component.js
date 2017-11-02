@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { MediaQuery } from 'react-responsive';
 import { object } from 'prop-types';
 
 // Services
@@ -15,19 +14,15 @@ const i18nRef = {
 };
 
 const navbarDesktop = (links) => (
-    <MediaQuery minDeviceWidth={1224}>
-        <ul>
-            {createLink(Object.values(links))}
-        </ul>
-    </MediaQuery>
+    <ul>
+        {createLink(Object.values(links))}
+    </ul>
 );
 
 const mobileDesktop = () => (
-    <MediaQuery maxDeviceWidth={1223}>
-        <div>
-            <span>...</span>
-        </div>
-    </MediaQuery>
+    <div>
+        <span>...</span>
+    </div>
 );
 
 const createLink = (links) =>
@@ -60,7 +55,6 @@ export class NavbarComponent extends Component {
             <nav className="container navbar">
                 <div className="row">
                     {navbarDesktop(links)}
-                    {mobileDesktop()}
                 </div>
             </nav>
         );
