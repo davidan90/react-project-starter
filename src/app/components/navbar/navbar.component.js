@@ -5,6 +5,9 @@ import { object } from 'prop-types';
 // Services
 import { translate } from '../../services/i18n';
 
+// Decorators
+import { ResponsiveComponent } from '../../decorators/responsive-component.decorator';
+
 // Styles
 import './_navbar.component.scss';
 
@@ -20,7 +23,7 @@ const navbarDesktop = (links) => (
 );
 
 const mobileDesktop = () => (
-    <div>
+    <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 openAside">
         <span>...</span>
     </div>
 );
@@ -34,27 +37,35 @@ const createLink = (links) =>
                 <Link to={path}>{translate(`${i18nRef[link]}.title`)}</Link>
             </li>
         );
-    }
-    );
+    });
 
+@ResponsiveComponent()
 export class NavbarComponent extends Component {
-    state = {};
-
     static propTypes = {
-        links: object,
+        links: object.isRequired,
     };
 
     static defaultProps = {
         links: {},
     }
 
+    _selectNavbar({ isDesktop, isTablet, isMobile }, links) {
+        if (isDesktop || isTablet) {
+            return navbarDesktop(links);
+        }
+    
+        if(isMobile){
+            return mobileDesktop();
+        }
+    }
+
     render() {
         const { links } = Object.freeze(this.props);
-
+        console.log(this.props)
         return (
             <nav className="container navbar">
                 <div className="row">
-                    {navbarDesktop(links)}
+                    {this._selectNavbar(this.props, links)}
                 </div>
             </nav>
         );
