@@ -46,7 +46,6 @@ export const ResponsiveComponent = () => (ComposeComponent) => {
             }
 
             _isDesktop() {
-                console.log(this._getDeviceType(), devices.desktop)
                 return this._getDeviceType() === devices.desktop;
             }
 

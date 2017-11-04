@@ -61,7 +61,6 @@ export class NavbarComponent extends Component {
 
     render() {
         const { links } = Object.freeze(this.props);
-        console.log(this.props)
         return (
             <nav className="container navbar">
                 <div className="row">
