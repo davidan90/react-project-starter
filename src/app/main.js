@@ -28,6 +28,15 @@ store.subscribe( () => {
 });
 
 class App extends Component {
+    
+    componentDidMount() {
+        window.addEventListener('resize', this._onResize.bind(this));
+    }
+
+    _onResize() {
+        /* TODO change store */
+    }
+
     render() {
         return (
             <div id="my-app">
