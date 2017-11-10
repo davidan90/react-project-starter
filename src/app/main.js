@@ -1,21 +1,12 @@
-import { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-// Constants
-import { CONTAINERS } from './constants';
+//Components
+import App from './app.component';
 
 // Services
-import { routerService } from './services/router';
 import { reduxService } from './services/redux';
-
-// Components
-import { NavbarComponent, SectionComponent, FooterComponent } from './components';
-
-// Styles css and scss
-import './main.scss';
 
 const store = createStore(
     reduxService.reducers.all,
@@ -27,36 +18,9 @@ store.subscribe( () => {
     localStorage['redux-store'] = JSON.stringify(store.getState());
 });
 
-class App extends Component {
-    
-    componentDidMount() {
-        window.addEventListener('resize', this._onResize.bind(this));
-    }
-
-    _onResize() {
-        /* TODO change store */
-    }
-
-    render() {
-        return (
-            <div id="my-app">
-                <Router>
-                    <div className="container">
-                        <NavbarComponent links={CONTAINERS} />
-                        <SectionComponent sections={CONTAINERS} />
-                        <FooterComponent />
-                    </div>
-                </Router>
-            </div>
-        );
-    }
-}
-
 ReactDOM.render(
     <Provider store={store}>
         <App />
     </Provider>, 
     document.getElementById('app-root')
 );
-
-routerService();
