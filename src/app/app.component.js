@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { object } from 'prop-types'
 
 // Constants
@@ -14,20 +15,20 @@ import { AppActions } from './services/redux/actions';
 // Styles css and scss
 import './main.scss';
 
-export default class App extends Component {
+const mapStateToProps = (state) => ({});
+const mapDispatchToProps = (dispatch) => ({
+    resizeAction: (width) => dispatch(AppActions.setDevice(width)),
+});
 
-    static contextTypes = {
-        store: object,
-    };
+@connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)
+export default class App extends Component {
     
     componentDidMount() {
-        window.addEventListener('resize', this._onResize.bind(this));
-    }
-
-    _onResize() {
-        const {store} = this.context;
-        const width = window.innerWidth;
-        store.dispatch(AppActions.setDevice(width));
+        const {resizeAction} = this.props;
+        window.addEventListener('resize', resizeAction.bind(window.innerWidth));
     }
 
     render() {
