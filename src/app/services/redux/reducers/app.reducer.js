@@ -1,4 +1,5 @@
-import { APP_RESIZE } from '../constants';
+import { CONTAINERS } from '../../../constants/containers';
+import { APP_RESIZE } from '../../../constants/actions';
 
 const getDevice = (width) => {
     switch (true) {
@@ -14,6 +15,10 @@ const getDevice = (width) => {
 }
 
 const INITIAL_STATE = {
+    section: {
+        containers: CONTAINERS,
+        selected: '',
+    },
     device: '',
 };
 export default function app(state = INITIAL_STATE, { type, playload }) {

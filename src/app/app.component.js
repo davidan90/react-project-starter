@@ -1,10 +1,9 @@
 import { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { object } from 'prop-types'
 
 // Constants
-import { CONTAINERS } from './constants';
+import { CONTAINERS } from './constants/containers';
 
 // Components
 import { NavbarComponent, SectionComponent, FooterComponent } from './components';

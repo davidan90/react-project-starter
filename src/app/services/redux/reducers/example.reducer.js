@@ -1,4 +1,4 @@
-import { CLICK_EXAMPLE } from '../constants';
+import { CLICK_EXAMPLE } from '../../../constants/actions';
 
 const INITIAL_STATE = {
     click: {},

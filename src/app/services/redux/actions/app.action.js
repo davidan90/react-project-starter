@@ -1,4 +1,4 @@
-import { APP_RESIZE } from '../constants';
+import { APP_RESIZE } from '../../../constants/actions';
 
 const setDevice = (width) => {
   return {
