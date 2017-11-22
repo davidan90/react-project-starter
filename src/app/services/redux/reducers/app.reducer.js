@@ -1,7 +1,7 @@
 import { CONTAINERS } from '../../../constants/containers';
 import { APP_RESIZE, APP_OPEN_ASIDE } from '../../../constants/actions';
 
-const getDevice = (width) => {
+const getDeviceType = (width) => {
     switch (true) {
         case width >= 1025:
             return 'desktop';
@@ -22,13 +22,16 @@ const INITIAL_STATE = {
         containers: CONTAINERS,
         selected: '',
     },
-    device: '',
+    device: {
+        type: '',
+        size: '',
+    },
 };
 export default function app(state = INITIAL_STATE, { type, playload }) {
     switch (type) {
         case APP_RESIZE:
-            const device = getDevice(playload.width);
-            return Object.assign({}, state, {device});
+            playload.device.type = getDeviceType(playload.device.size);
+            return Object.assign({}, state, playload);
         case APP_OPEN_ASIDE:
             return Object.assign({}, state, playload);
         default:

@@ -16,7 +16,7 @@ import './main.scss';
 
 const mapStateToProps = (state) => ({});
 const mapDispatchToProps = (dispatch) => ({
-    resizeAction: (width) => dispatch(AppActions.setDevice(width)),
+    resizeAction: () => dispatch(AppActions.setDevice(window.innerWidth)),
 });
 
 @connect(
@@ -27,7 +27,7 @@ export default class App extends Component {
     
     componentDidMount() {
         const {resizeAction} = this.props;
-        window.addEventListener('resize', resizeAction.bind(window.innerWidth));
+        window.addEventListener('resize', resizeAction.bind(this));
     }
 
     render() {

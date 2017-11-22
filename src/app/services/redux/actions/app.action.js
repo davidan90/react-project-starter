@@ -1,9 +1,11 @@
 import { APP_RESIZE, APP_OPEN_ASIDE } from '../../../constants/actions';
 
-const setDevice = (width) => ({
+const setDevice = (size) => ({
   type: APP_RESIZE,
   playload: {
-    width,
+    device: {
+      size
+    }
   }
 });
 
