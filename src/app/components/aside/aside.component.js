@@ -12,14 +12,19 @@ export class AsideComponent extends Component {
     static defaultProps = {
         links: {},
     }
+
+    constructor(props) {
+        super(props);
+    }
+    
     _selectAside({ links }) {
         return <span>TODO aside</span>
     }
 
     render() {
         return (
-            <aside className="container aside">
-                <div className="row">
+            <aside className="aside">
+                <div>
                     {this._selectAside(this.props)}
                 </div>
             </aside>

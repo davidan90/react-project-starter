@@ -24,9 +24,9 @@ const mapDispatchToProps = (dispatch) => ({
     mapDispatchToProps,
 )
 export default class App extends Component {
-    
+
     componentDidMount() {
-        const {resizeAction} = this.props;
+        const { resizeAction } = this.props;
         window.addEventListener('resize', resizeAction.bind(this));
     }
 
@@ -36,7 +36,7 @@ export default class App extends Component {
                 <Router>
                     <div className="container">
                         <NavbarComponent links={CONTAINERS} />
-                        {/* <AsideComponent links={CONTAINERS} /> */}
+                        <AsideComponent links={CONTAINERS} />
                         <SectionComponent sections={CONTAINERS} />
                         <FooterComponent />
                     </div>
