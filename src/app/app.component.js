@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { CONTAINERS } from './constants/containers';
 
 // Components
-import { NavbarComponent, SectionComponent, FooterComponent } from './components';
+import { NavbarComponent, AsideComponent, SectionComponent, FooterComponent } from './components';
 
 // Services
 import { AppActions } from './services/redux/actions';
@@ -36,6 +36,7 @@ export default class App extends Component {
                 <Router>
                     <div className="container">
                         <NavbarComponent links={CONTAINERS} />
+                        <AsideComponent links={CONTAINERS} />
                         <SectionComponent sections={CONTAINERS} />
                         <FooterComponent />
                     </div>
