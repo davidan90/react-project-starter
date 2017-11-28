@@ -14,9 +14,12 @@
         }
     },
     "container": { 
+        "login": {
+            "title": "Inicio de sesión",
+            "btn-text-1": "Inicio"
+        },
         "home": {
-            "title": "Inicio",
-            "btn-text": "Ejemplo Redux"
+            "title": "Inicio"
         },
         "about": {
             "title": "Nosotros"

@@ -13,10 +13,13 @@
             "text": "Foo footer"
         }
     },
-    "container": { 
+    "container": {
+        "login": {
+            "title": "Login",
+            "btn-text-1": "Go"
+        },
         "home": {
-            "title": "Home",
-            "btn-text": "Ejemplo Redux"
+            "title": "Home"
         },
         "about": {
             "title": "About"
