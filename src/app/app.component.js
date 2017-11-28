@@ -14,7 +14,7 @@ import { AppActions } from './services/redux/actions';
 // Styles css and scss
 import './main.scss';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => state;
 const mapDispatchToProps = (dispatch) => ({
     resizeAction: () => dispatch(AppActions.setDevice(window.innerWidth)),
 });

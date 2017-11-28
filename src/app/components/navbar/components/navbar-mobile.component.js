@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 @connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps,
 )
 export class NavbarMobile extends Component {

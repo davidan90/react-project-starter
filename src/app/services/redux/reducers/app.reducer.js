@@ -1,5 +1,5 @@
 import { CONTAINERS } from '../../../constants/containers';
-import { APP_RESIZE, APP_OPEN_ASIDE } from '../../../constants/actions';
+import { APP_RESIZE, APP_CHANGE_SECTION_SELECTED, APP_OPEN_ASIDE } from '../../../constants/actions';
 
 const getDeviceType = (width) => {
     switch (true) {
@@ -20,21 +20,32 @@ const INITIAL_STATE = {
     },
     section: {
         containers: CONTAINERS,
-        selected: '',
+        selected: undefined,
     },
     device: {
-        type: '',
-        size: '',
+        type: undefined,
+        size: undefined,
     },
 };
 export default function app(state = INITIAL_STATE, { type, playload }) {
+    const newState = Object.assign({}, state);
     switch (type) {
+
         case APP_RESIZE:
-            playload.device.type = getDeviceType(playload.device.size);
-            return Object.assign({}, state, playload);
+            newState.device.type = getDeviceType(playload.size);
+            newState.device.size = playload.size;
+            break;
+
+        case APP_CHANGE_SECTION_SELECTED:
+            newState.section.selected = playload.selected;
+            break;
+
         case APP_OPEN_ASIDE:
-            return Object.assign({}, state, playload);
+            newState.aside.open = playload.open;
+            break;
+
         default:
-            return state;
+            break;
     }
+    return newState;
 };
