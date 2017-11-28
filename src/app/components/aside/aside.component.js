@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import { object } from 'prop-types';
 
+// Components
+import { AsideList } from './components/aside-list.component'
+
 // Styles
 import './_aside.component.scss';
 
@@ -16,16 +19,13 @@ export class AsideComponent extends Component {
     constructor(props) {
         super(props);
     }
-    
-    _selectAside({ links }) {
-        return <span>TODO aside</span>
-    }
 
     render() {
+        const {links} = this.props;
         return (
             <aside className="aside">
                 <div>
-                    {this._selectAside(this.props)}
+                    <AsideList links={links}/>
                 </div>
             </aside>
         );
