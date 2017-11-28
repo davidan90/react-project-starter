@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { object } from 'prop-types';
 
 // Constants
@@ -18,6 +19,19 @@ const createSection = ( sections ) =>
         }
     );
 
+const getDefaultComponent = (path, sections) => {
+    const pathSplit = path.split('/')[1];
+    const pathComponent = pathSplit !== '' ? sections[pathSplit] : sections.home;
+    return CONTAINERS_ELEMENTS[pathComponent];
+}
+
+const mapStateToProps = (state, props) => ({
+    sectionSelected: state.app.section.selected,
+});
+
+@connect(
+    mapStateToProps
+)
 export class SectionComponent extends Component {
     state = {};
     
@@ -30,14 +44,13 @@ export class SectionComponent extends Component {
     };
 
     render() {
-        const { sections } = Object.freeze(this.props);
-        const defaultPath = '/';
-        const defaultComponent = CONTAINERS_ELEMENTS[sections.home];
+        const { sections, sectionSelected } = this.props;
+        const defaultComponent = getDefaultComponent(sectionSelected ? sectionSelected : '/', sections);
 
         return (
             <section className="container section">
                 <div>
-                    <Route exact path={defaultPath} component={defaultComponent} />
+                    <Route exact path="/" component={defaultComponent} />
                     {createSection(Object.values(sections))}
                 </div>
             </section>

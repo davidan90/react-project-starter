@@ -6,7 +6,6 @@ import { AppActions } from '../../../services/redux/actions';
 
 let openAside = false;
 
-const mapStateToProps = (state) => ({});
 const mapDispatchToProps = (dispatch) => ({
     clickAction: () => {
         openAside = !openAside;

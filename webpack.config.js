@@ -26,7 +26,11 @@ const BASE_CONFIG = {
     ]
   },
 
-  plugins: [HtmlWebpackPluginConfig, ReactPluginConfig]
+  plugins: [HtmlWebpackPluginConfig, ReactPluginConfig],
+  
+  devServer: {
+    historyApiFallback: true,
+  },
 }
 
 module.exports = BASE_CONFIG;

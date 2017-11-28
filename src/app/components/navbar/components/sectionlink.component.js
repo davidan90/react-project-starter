@@ -11,16 +11,12 @@ const i18nRef = {
     About: 'container.about',
 };
 
-const mapStateToProps = (state, props) => ({
-    sectionSelected: state.app.section.selected,
-});
-
 const mapDispatchToProps = (dispatch, props) => ({
     changeSectionAction: (path) => dispatch(AppActions.setSectionSelected(path)),
 });
 
 @connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps,
 )
 export default class SectionLink extends Component {
@@ -30,7 +26,7 @@ export default class SectionLink extends Component {
     }
 
     _clickHandler(path) {
-        const {changeSectionAction} = this.props; 
+        const {changeSectionAction} = this.props;
         changeSectionAction(path);
     }
 
