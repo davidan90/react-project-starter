@@ -5,8 +5,8 @@ const createLink = ({ links }) =>
         const id = `link_${index}`;
         const path = `/${link.toLowerCase()}`;
         return (
-            <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">
-                <SectionLink key={id} path={path} link={link} />
+            <div key={id} className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">
+                <SectionLink path={path} link={link} />
             </div>
         )
     });

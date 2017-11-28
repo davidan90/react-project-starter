@@ -2,11 +2,11 @@ import SectionLink from '../../shared/sectionlink.component';
 
 const createLink = ({ links }) =>
     Object.values(links).map((link, index) => {
-        const id = `link_${index}`;
+        const id = `link_aside_${index}`;
         const path = `/${link.toLowerCase()}`;
         return (
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <SectionLink key={id} path={path} link={link} />
+            <div key={id} className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <SectionLink path={path} link={link} />
             </div>
         );
     });
