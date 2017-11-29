@@ -1,4 +1,4 @@
-import { LOGIN_LOGGED } from '../../../constants/actions';
+import { LOGIN_LOGGED, LOGIN_USER } from '../../../constants/actions';
 
 const setLoginLogged = (logged) => ({
   type: LOGIN_LOGGED,
@@ -7,6 +7,14 @@ const setLoginLogged = (logged) => ({
   }
 });
 
+const setLoginUser = (user) => ({
+  type: LOGIN_USER,
+  playload: {
+    user,
+  }
+})
+
 export const LoginActions = {
-    setLoginLogged
+    setLoginLogged,
+    setLoginUser,
 };

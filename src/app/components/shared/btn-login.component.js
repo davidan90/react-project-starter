@@ -7,8 +7,14 @@ import { Api } from '../../services/api';
 import { LoginActions } from '../../services/redux/actions';
 
 const mapDispatchToProps = (dispatch) => ({
-    onLoginAction: () => {
-        dispatch(LoginActions.setLoginLogged(true));
+    onLoginSuccesAction: (user) => {
+        if (user) {
+            dispatch(LoginActions.setLoginUser(user));
+            dispatch(LoginActions.setLoginLogged(true));
+        }
+    },
+    onLoginFailureAction: () => {
+        dispatch(LoginActions.setLoginLogged(false));
     }
 });
 
@@ -19,13 +25,17 @@ const mapDispatchToProps = (dispatch) => ({
 export default class LoginButton extends Component {
 
     _onLogin() {
-        const { onLoginAction } = this.props;
+        const { onLoginSuccesAction, onLoginFailureAction } = this.props;
+        //Example with randomuser
         Api.GET('https://randomuser.me/api/')
             .then((data) => {
-                console.log(data)
-                onLoginAction();
+                const user = data.results[0];
+                onLoginSuccesAction(user);
             })
-            .catch((err) => {console.error(err)});
+            .catch((err) => {
+                onLoginFailureAction();
+                console.error(err);
+            });
     }
 
     render() {
