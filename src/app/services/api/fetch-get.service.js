@@ -8,6 +8,6 @@ const objectToQueryString = (params) => '?' + Object.keys(params)
 
 export const GET = async (endpoint, queryString = {}) => {
     endpoint = `${endpoint}${objectToQueryString(queryString)}`;
-    const data = await fetch(endpoint, params);
-    return data.json();
+    const response = await fetch(endpoint, params);
+    return response.json();
 }

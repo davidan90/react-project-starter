@@ -3,6 +3,6 @@ const params = {
 };
 
 export const POST = async (endpoint, data = {}) => {
-    const data = await fetch(endpoint, params);
-    return data.json();
+    const response = await fetch(endpoint, params);
+    return response.json();
 }

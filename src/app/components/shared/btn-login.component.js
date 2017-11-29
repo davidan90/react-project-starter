@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 // Services
 import { translate } from '../../services/i18n';
+import { Api } from '../../services/api';
 import { LoginActions } from '../../services/redux/actions';
 
 const mapDispatchToProps = (dispatch) => ({
@@ -16,10 +17,15 @@ const mapDispatchToProps = (dispatch) => ({
     mapDispatchToProps,
 )
 export default class LoginButton extends Component {
-    
+
     _onLogin() {
         const { onLoginAction } = this.props;
-        onLoginAction();
+        Api.GET('https://randomuser.me/api/')
+            .then((data) => {
+                console.log(data)
+                onLoginAction();
+            })
+            .catch((err) => {console.error(err)});
     }
 
     render() {
