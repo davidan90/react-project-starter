@@ -11,3 +11,7 @@ export const objectToFormData = (params) => {
 export const objectToQueryString = (params) => '?' + Object.keys(params)
     .map(param => `${param}=${encodeURIComponent(params[param])}`)
     .join('&');
+
+export const endpointWithId = (endpoint, id) => `${endpoint}/${id}`;
+
+export const errorHandler = (method, msg) => new Error(`API ${method} failed: ${msg}`);
