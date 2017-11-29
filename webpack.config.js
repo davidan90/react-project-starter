@@ -16,7 +16,7 @@ const ReactPluginConfig = new webpack.ProvidePlugin({
 });
 
 const BASE_CONFIG = {
-  entry: ['./src/app/main.js'],
+  entry: ['babel-polyfill', './src/app/main.js'],
 
   module: {
     loaders: [
