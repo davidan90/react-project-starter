@@ -33,7 +33,7 @@ export default class SectionLink extends Component {
     render() {
         const { path, link } = this.props;
         return (
-            <li onClick={this._clickHandler.bind(this, path)}>
+            <li className="col-2 col-sm-2"onClick={this._clickHandler.bind(this, path)}>
                 <Link to={path}>{translate(`${i18nRef[link]}.title`)}</Link>
             </li>
         );
