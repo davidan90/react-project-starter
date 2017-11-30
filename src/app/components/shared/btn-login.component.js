@@ -1,10 +1,20 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { I18N } from 'react-i18n-hoc';
 
 // Services
-import { translate } from '../../services/i18n';
 import { Api } from '../../services/api';
 import { LoginActions } from '../../services/redux/actions';
+
+const lang = 'es';
+const i18n = {
+    es: {
+        'btnText1': 'Inicio',
+    },
+    en: {
+        'btnText1': 'Go',
+    },
+};
 
 const mapDispatchToProps = (dispatch) => ({
     onLoginSuccesAction: (user) => {
@@ -22,6 +32,7 @@ const mapDispatchToProps = (dispatch) => ({
     null,
     mapDispatchToProps,
 )
+@I18N({i18n})
 export default class LoginButton extends Component {
 
     _onLogin() {
@@ -41,7 +52,7 @@ export default class LoginButton extends Component {
     render() {
         return (
             <button onClick={this._onLogin.bind(this)}>
-                {translate('container.login.btn-text-1')}
+                {this.props.i18n.btnText1}
             </button>
         );
     }
