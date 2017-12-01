@@ -23,7 +23,7 @@ export class NavbarMobile extends Component {
     render() {
         const { isAsideOpen, clickAction } = this.props;
         return (
-            <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 openAside">
+            <div className="openAside">
                 <span onClick={clickAction.bind(this, isAsideOpen)}>...</span>
             </div>
         );

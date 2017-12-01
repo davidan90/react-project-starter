@@ -46,7 +46,7 @@ export class SectionLink extends Component {
     render() {
         const { path, link } = this.props;
         return (
-            <li className="col-2 col-sm-2" onClick={this._clickHandler.bind(this, path)}>
+            <li onClick={this._clickHandler.bind(this, path)}>
                 <Link to={path}>
                     {this.props.i18n[`${i18nRef[link]}`]}
                 </Link>

@@ -3,6 +3,16 @@
     @import 'assets/sass/base';
 }
 
+#my-app{ 
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 
 // Fonts
 // for example: @import 'assets/sass/fonts';

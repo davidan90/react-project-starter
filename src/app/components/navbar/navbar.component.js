@@ -8,6 +8,7 @@ import { AppActions } from '../../services/redux/actions';
 // Components
 import { NavbarDesktop } from './components/navbar-desktop.component';
 import { NavbarMobile } from './components/navbar-mobile.component';
+import { LogoutButton } from '../shared';
 
 // Styles
 import './_navbar.component.scss';
@@ -48,7 +49,12 @@ export class NavbarComponent extends Component {
         return (
             <nav className="container navbar">
                 <div className="row">
-                    {this._selectNavbar(this.props)}
+                    <div  className="navbar-list">
+                        {this._selectNavbar(this.props)}
+                    </div>
+                    <div className="btn-logout">
+                        <LogoutButton />
+                    </div>
                 </div>
             </nav>
         );
