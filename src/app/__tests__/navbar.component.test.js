@@ -1,8 +1,8 @@
 import React from 'react';
-import AsideComponent from './aside.component';
+import NavbarComponent from '../components';
 import renderer from 'react-test-renderer';
 
-describe('AsideComponent Tests', () => {
+describe('NavbarComponent Tests', () => {
     test('true has to be true', () => {
         expect(true).toBe(true);
     });

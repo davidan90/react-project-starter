@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionComponent from './section.component';
+import FooterComponent from '../components';
 import renderer from 'react-test-renderer';
 
-describe('SectionComponent Tests', () => {
+describe('FooterComponent Tests', () => {
     test('true has to be true', () => {
         expect(true).toBe(true);
     });

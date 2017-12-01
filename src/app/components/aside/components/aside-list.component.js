@@ -1,3 +1,4 @@
+import React from 'react';
 import { SectionLink } from '../../shared';
 
 const createLink = ({ links }) =>
