@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { I18N } from 'react-i18n-hoc';
 
 // Components
-import LoginButton from '../../components/shared';
+import { LoginButton } from '../../components/shared';
 
 const lang = 'es';
 const i18n = {

@@ -9,10 +9,10 @@ import { LoginActions } from '../../services/redux/actions';
 const lang = 'es';
 const i18n = {
     es: {
-        'btnText1': 'Inicio',
+        btnText1: 'Inicio',
     },
     en: {
-        'btnText1': 'Go',
+        btnText1: 'Go',
     },
 };
 
