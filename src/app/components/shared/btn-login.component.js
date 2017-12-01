@@ -33,7 +33,7 @@ const mapDispatchToProps = (dispatch) => ({
     mapDispatchToProps,
 )
 @I18N({i18n})
-export default class LoginButton extends Component {
+export class LoginButton extends Component {
 
     _onLogin() {
         const { onLoginSuccesAction, onLoginFailureAction } = this.props;

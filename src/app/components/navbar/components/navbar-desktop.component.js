@@ -1,4 +1,4 @@
-import SectionLink from '../../shared/link-section.component';
+import { SectionLink } from '../../shared';
 
 const createLink = ({ links }) =>
     Object.values(links).map((link, index) => {

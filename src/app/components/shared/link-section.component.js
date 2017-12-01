@@ -32,7 +32,7 @@ const mapDispatchToProps = (dispatch, props) => ({
     mapDispatchToProps,
 )
 @I18N({i18n})
-export default class SectionLink extends Component {
+export class SectionLink extends Component {
 
     constructor(props) {
         super(props);
