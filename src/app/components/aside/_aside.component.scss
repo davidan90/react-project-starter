@@ -1,12 +1,12 @@
 .aside {
     background-color: gainsboro;
-    border: 1px solid black;
     float: left;
-    height: 100%;
+    height: 35%;
     position: fixed;
-    top: 3.5em;
-    width:20%;
+    top: 33%;
+    width:25%;
     z-index: 100;
+    clip-path:  polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%);
 }
 
 .aside-list {
