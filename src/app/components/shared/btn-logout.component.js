@@ -1,9 +1,10 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { I18N } from 'react-i18n-hoc';
 
 // Services
-import { LoginActions } from '../../services/redux/actions';
+import { AppActions, LoginActions } from '../../services/redux/actions';
 
 const lang = 'es';
 const i18n = {
@@ -17,6 +18,7 @@ const i18n = {
 
 const mapDispatchToProps = (dispatch) => ({
     onLogoutAction: () => {
+        dispatch(AppActions.setSectionSelected('/'));
         dispatch(LoginActions.setLoginUser({}));
         dispatch(LoginActions.setLoginLogged(false));
     },
@@ -26,7 +28,7 @@ const mapDispatchToProps = (dispatch) => ({
     null,
     mapDispatchToProps,
 )
-@I18N({i18n})
+@I18N({ i18n })
 export class LogoutButton extends Component {
 
     _onLogout() {
@@ -37,7 +39,9 @@ export class LogoutButton extends Component {
     render() {
         return (
             <button onClick={this._onLogout.bind(this)}>
-                {this.props.i18n.btnText1}
+                <Link to={'/'}>
+                    {this.props.i18n.btnText1}
+                </Link>
             </button>
         );
     }
