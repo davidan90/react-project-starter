@@ -1,4 +1,7 @@
+@import '../../assets/sass/colors';
+
 .section {
+    background-color: $secondColor;
     border: 1px solid black;
     height: 90%;
     position: absolute;

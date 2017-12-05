@@ -1,5 +1,7 @@
+@import '../../assets/sass/colors';
+
 .navbar {
-    background-color: gainsboro;
+    background-color: $primaryColor;
     border: 1px solid black;
     height: 3.5em;
     padding: 10px;

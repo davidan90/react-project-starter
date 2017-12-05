@@ -1,9 +1,9 @@
-#app-root{   
-    @import 'assets/css/grid/bootstrap-grid.min.css';
-    @import 'assets/sass/base';
-}
+@import 'assets/css/grid/bootstrap-grid.min.css';
+@import 'assets/sass/colors';
+@import 'assets/sass/base';
 
-#app-root{ 
+#app-root{
+    background-color: $fourthColor;
     width: 100%;
     height: 100%;
 }
@@ -11,6 +11,20 @@
 body {
     overflow-x: hidden;
     overflow-y: hidden;
+    color: $secondColor;
+
+    a {
+        color: $secondColor;
+    }
+
+    a:hover {
+        color: $thirdColor;
+    }
+
+    button {
+        background-color: $thirdColor;
+        border-radius: 3px;
+    }
 }
 
 // Fonts

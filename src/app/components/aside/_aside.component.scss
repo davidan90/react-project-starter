@@ -1,5 +1,7 @@
+@import '../../assets/sass/colors';
+
 .aside {
-    background-color: gainsboro;
+    background-color: $primaryColor;
     border-left: 1px solid black;
     clip-path:  polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%);
     float: left;

@@ -4,6 +4,9 @@ import { I18N } from 'react-i18n-hoc';
 // Components
 import { LoginButton } from '../../components/shared';
 
+// Styles
+import './_login.scss';
+
 const lang = 'es';
 const i18n = {
     es: {
@@ -18,7 +21,7 @@ const i18n = {
 export class Login extends Component {
     render() {
         return (
-            <div>
+            <div className="login">
                 <h1>{this.props.i18n.title}</h1>
                 <LoginButton />
             </div>

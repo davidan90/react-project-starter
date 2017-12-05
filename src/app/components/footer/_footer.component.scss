@@ -1,5 +1,7 @@
+@import '../../assets/sass/colors';
+
 .footer {
-    background-color: gainsboro;
+    background-color: $primaryColor;
     border: 1px solid black;
     bottom: 0;
     height: 3.5em;
