@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom';
 import { Component } from 'react';
 import { I18N } from 'react-i18n-hoc';
 
@@ -12,9 +13,11 @@ const lang = 'es';
 const i18n = {
     es: {
         title: 'Nosotros',
+        modalText: 'Aqui va el contenido del modal',
     },
     en: {
         title: "About",
+        modalText: 'Here modal content',
     },
 };
 
@@ -28,8 +31,16 @@ export class About extends Component {
         };
     }
 
+    componentDidMount() {
+        document.addEventListener('onModalClose_aboutModal', this._closeModal.bind(this));
+    }
+
+    _closeModal() {
+        this.setState({ isModalShow: false });
+    }
+
     _showModal() {
-        this.setState({ isModalShow: !this.state.isModalShow });
+        this.setState({ isModalShow: true });
     }
 
     render() {
@@ -39,10 +50,13 @@ export class About extends Component {
                     <SectionTitle text={this.props.i18n.title} />
                 </div>
                 <div>
-                    <span onClick={this._showModal.bind(this)}>open modal</span>
+                    <button onClick={this._showModal.bind(this)}>Modal</button>
                 </div>
-                <ModalComponent show={this.state.isModalShow}>
-                    <span>TODO</span>
+                <ModalComponent
+                    id="aboutModal"
+                    show={this.state.isModalShow}
+                    header={`Modal ${this.props.i18n.title}`}>
+                    <span>{this.props.i18n.modalText}</span>
                 </ModalComponent>
             </div>
         );

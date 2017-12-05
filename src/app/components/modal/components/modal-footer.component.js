@@ -1,14 +1,16 @@
 import { Component } from 'react';
 
 export const ModalFooter = (props) => {
-    const {text} = props;
+    const { text } = props;
     
-    return text ?
-        (
-            <div className="modal-footer">
-                <span>
-                    {text}
-                </span>
+    return (
+        <div className="modal-footer">
+            <div>
+                <span>{text}</span>
             </div>
-        ) : null;
+            <div>
+                {props.children}
+            </div>
+        </div>
+    );
 }

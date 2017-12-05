@@ -22,6 +22,14 @@ export class ModalComponent extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            closeModalEvent: new Event(`onModalClose_${props.id}`),
+        }
+    }
+
+    _closeModal() {
+        const { closeModalEvent } = this.state;
+        document.dispatchEvent(closeModalEvent);
     }
 
     _displayModal() {
@@ -34,7 +42,9 @@ export class ModalComponent extends Component {
                         <div className="modal-section">
                             {this.props.children}
                         </div>
-                        <ModalFooter text={footer} />
+                        <ModalFooter text={footer}>
+                            <button onClick={this._closeModal.bind(this)}>X</button>
+                        </ModalFooter>
                     </div>
                 </div>
             ) : null;
